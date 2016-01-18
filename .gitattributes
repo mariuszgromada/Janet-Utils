@@ -1,0 +1,6 @@
+doc/* linguist-documentation
+*.classpath linguist-vendored
+*.project linguist-vendored
+.md linguist-documentation
+*README* linguist-documentation
+*.user linguist-vendored
