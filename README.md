@@ -28,6 +28,7 @@ I just released initial version of some helpful Java Utils, all written while im
 * !!!! Waring - software will override your html files found in the JAVADOC folder and its subfolders.
 * Injecting Google Analytics snippet into JAVADOC html file.
 * Extending page (window) title in JAVADOC documents.
+* Check how it works on my "doc" folders :-)
 
 # Enjoy :-)
 ### Mariusz Gromada
