@@ -1,5 +1,5 @@
 /*
- * @(#)ArrayX.java        1.0.0    2016-01-18
+ * @(#)DateTimeX.java        1.0.0    2016-01-24
  *
  * You may use this software under the condition of "Simplified BSD License"
  *
@@ -47,12 +47,14 @@
  */
 package org.mariuszgromada.utils;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Class implements general purpose methods
- * helping to work with arrays, array lists, etc.
+ * helping to work with date, time, etc.
  *
  *
  * @author         <b>Mariusz Gromada</b><br/>
@@ -68,22 +70,36 @@ import java.util.ArrayList;
  *
  * @version        1.0.0
  */
-public final class ArrayX {
+public final class DateTimeX {
 	/**
-	 * Converts generic ArraList to Array
-	 *
-	 * @param componentType    Class type, i.e. if ArrayList<String> is converted
-	 *                         then componentType = String.class
-	 * @param arrayList        ArrayList of <C> to be converted to C[]
-	 *
-	 * @return                 Array C[] including elements of ArrayList<C>
+	 * Default date time format used while converting date / time
+	 * to string.
 	 */
-	public static final <C> C[] toArray(Class<C> componentType, ArrayList<C> arrayList) {
-		int n = arrayList.size();
-		@SuppressWarnings("unchecked")
-		C[] array = (C[])Array.newInstance(componentType, n);
-		for (int i = 0; i < n; i++)
-			array[i] = arrayList.get(i);
-		return array;
+	public static String DEFAULT_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
+	/**
+	 * Gets current date and time;
+	 * @return Current date / time object.
+	 */
+	public static final Date getCurrDateTime() {
+		return Calendar.getInstance().getTime();
+	}
+	/**
+	 * Gets string representation of current date time.
+	 *
+	 * @param dateFormat  Format to applied while conversion.
+	 * @return            String representation of current date and time.
+	 */
+	public static final String getCurrDateTimeStr(String dateFormat) {
+		DateFormat df = new SimpleDateFormat(dateFormat);
+		return df.format(getCurrDateTime());
+	}
+	/**
+	 * Gets string representation of current date time applying
+	 * default date and time format.
+	 *
+	 * @return            String representation of current date and time.
+	 */
+	public static final String getCurrDateTimeStr() {
+		return getCurrDateTimeStr(DEFAULT_DATE_TIME_FORMAT);
 	}
 }
