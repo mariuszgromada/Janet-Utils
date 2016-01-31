@@ -1,5 +1,5 @@
 /*
- * @(#)DateTimeX.java        1.0.0    2016-01-24
+ * @(#)DateTimeX.java        1.1.0    2016-01-31
  *
  * You may use this software under the condition of "Simplified BSD License"
  *
@@ -101,5 +101,12 @@ public final class DateTimeX {
 	 */
 	public static final String getCurrDateTimeStr() {
 		return getCurrDateTimeStr(DEFAULT_DATE_TIME_FORMAT);
+	}
+	/**
+	 * Current date/time in milliseconds
+	 * @return Number of milliseconds
+	 */
+	public static final long currentTimeMillis() {
+		return System.currentTimeMillis();
 	}
 }
