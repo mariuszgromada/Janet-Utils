@@ -49,7 +49,7 @@ package org.mariuszgromada.utils;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-
+import java.util.Stack;
 /**
  * Class implements general purpose methods
  * helping to work with arrays, array lists, etc.
@@ -74,16 +74,33 @@ public final class ArrayX {
 	 *
 	 * @param componentType    Class type, i.e. if ArrayList<String> is converted
 	 *                         then componentType = String.class
-	 * @param arrayList        ArrayList of <C> to be converted to C[]
+	 * @param arrayList        ArrayList of <T> to be converted to T[]
 	 *
-	 * @return                 Array C[] including elements of ArrayList<C>
+	 * @return                 Array T[] including elements of ArrayList<T>
 	 */
-	public static final <C> C[] toArray(Class<C> componentType, ArrayList<C> arrayList) {
+	public static final <T> T[] toArray(Class<T> componentType, ArrayList<T> arrayList) {
 		int n = arrayList.size();
 		@SuppressWarnings("unchecked")
-		C[] array = (C[])Array.newInstance(componentType, n);
+		T[] array = (T[])Array.newInstance(componentType, n);
 		for (int i = 0; i < n; i++)
 			array[i] = arrayList.get(i);
+		return array;
+	}
+	/**
+	 * Converts generic ArraList to Array
+	 *
+	 * @param componentType    Class type, i.e. if ArrayList<String> is converted
+	 *                         then componentType = String.class
+	 * @param stack            Stack of <T> to be converted to T[]
+	 *
+	 * @return                 Array T[] including elements of Stack<T>
+	 */
+	public static final <T> T[] toArray(Class<T> componentType, Stack<T> stack) {
+		int n = stack.size();
+		@SuppressWarnings("unchecked")
+		T[] array = (T[])Array.newInstance(componentType, n);
+		for (int i = 0; i < n; i++)
+			array[i] = stack.get(i);
 		return array;
 	}
 }
