@@ -45,12 +45,12 @@
  *                              Asked if he believes in one God, a mathematician answered:
  *                              "Yes, up to isomorphism."
  */
-package org.mariuszgromada.utils.io;
+package org.mariuszgromada.janetutils.io;
 
 import java.io.File;
 import java.util.ArrayList;
 
-import org.mariuszgromada.utils.ArrayX;
+import org.mariuszgromada.janetutils.ArrayX;
 
 /**
  * General purpose class to help working with folders.

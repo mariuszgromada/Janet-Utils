@@ -45,7 +45,7 @@
  *                              Asked if he believes in one God, a mathematician answered:
  *                              "Yes, up to isomorphism."
  */
-package org.mariuszgromada.utils.io;
+package org.mariuszgromada.janetutils.io;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -56,7 +56,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.mariuszgromada.utils.ArrayX;
+import org.mariuszgromada.janetutils.ArrayX;
 
 /**
  * Class implements general purpose methods

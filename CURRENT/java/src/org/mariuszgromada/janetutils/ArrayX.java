@@ -1,5 +1,5 @@
 /*
- * @(#)DateTimeX.java        1.1.0    2016-01-31
+ * @(#)ArrayX.java        1.0.0    2016-01-18
  *
  * You may use this software under the condition of "Simplified BSD License"
  *
@@ -45,16 +45,14 @@
  *                              Asked if he believes in one God, a mathematician answered:
  *                              "Yes, up to isomorphism."
  */
-package org.mariuszgromada.utils;
+package org.mariuszgromada.janetutils;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Stack;
 /**
  * Class implements general purpose methods
- * helping to work with date, time, etc.
+ * helping to work with arrays, array lists, etc.
  *
  *
  * @author         <b>Mariusz Gromada</b><br/>
@@ -70,43 +68,39 @@ import java.util.Date;
  *
  * @version        1.0.0
  */
-public final class DateTimeX {
+public final class ArrayX {
 	/**
-	 * Default date time format used while converting date / time
-	 * to string.
-	 */
-	public static String DEFAULT_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
-	/**
-	 * Gets current date and time;
-	 * @return Current date / time object.
-	 */
-	public static final Date getCurrDateTime() {
-		return Calendar.getInstance().getTime();
-	}
-	/**
-	 * Gets string representation of current date time.
+	 * Converts generic ArraList to Array
 	 *
-	 * @param dateFormat  Format to applied while conversion.
-	 * @return            String representation of current date and time.
-	 */
-	public static final String getCurrDateTimeStr(String dateFormat) {
-		DateFormat df = new SimpleDateFormat(dateFormat);
-		return df.format(getCurrDateTime());
-	}
-	/**
-	 * Gets string representation of current date time applying
-	 * default date and time format.
+	 * @param componentType    Class type, i.e. if ArrayList<String> is converted
+	 *                         then componentType = String.class
+	 * @param arrayList        ArrayList of <T> to be converted to T[]
 	 *
-	 * @return            String representation of current date and time.
+	 * @return                 Array T[] including elements of ArrayList<T>
 	 */
-	public static final String getCurrDateTimeStr() {
-		return getCurrDateTimeStr(DEFAULT_DATE_TIME_FORMAT);
+	public static final <T> T[] toArray(Class<T> componentType, ArrayList<T> arrayList) {
+		int n = arrayList.size();
+		@SuppressWarnings("unchecked")
+		T[] array = (T[])Array.newInstance(componentType, n);
+		for (int i = 0; i < n; i++)
+			array[i] = arrayList.get(i);
+		return array;
 	}
 	/**
-	 * Current date/time in milliseconds
-	 * @return Number of milliseconds
+	 * Converts generic ArraList to Array
+	 *
+	 * @param componentType    Class type, i.e. if ArrayList<String> is converted
+	 *                         then componentType = String.class
+	 * @param stack            Stack of <T> to be converted to T[]
+	 *
+	 * @return                 Array T[] including elements of Stack<T>
 	 */
-	public static final long currentTimeMillis() {
-		return System.currentTimeMillis();
+	public static final <T> T[] toArray(Class<T> componentType, Stack<T> stack) {
+		int n = stack.size();
+		@SuppressWarnings("unchecked")
+		T[] array = (T[])Array.newInstance(componentType, n);
+		for (int i = 0; i < n; i++)
+			array[i] = stack.get(i);
+		return array;
 	}
 }
