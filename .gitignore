@@ -1,4 +1,4 @@
 bin/
 .classpath
 .project
-src/tests/
+CURRENT/java/src/tests/
