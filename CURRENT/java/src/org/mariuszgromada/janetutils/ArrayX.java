@@ -70,7 +70,7 @@ import java.util.Stack;
  */
 public final class ArrayX {
 	/**
-	 * Converts generic ArraList to Array
+	 * Converts generic ArraList to array
 	 *
 	 * @param componentType    Class type, i.e. if ArrayList<String> is converted
 	 *                         then componentType = String.class
@@ -87,9 +87,9 @@ public final class ArrayX {
 		return array;
 	}
 	/**
-	 * Converts generic ArraList to Array
+	 * Converts generic Stack to array
 	 *
-	 * @param componentType    Class type, i.e. if ArrayList<String> is converted
+	 * @param componentType    Class type, i.e. if Stack<String> is converted
 	 *                         then componentType = String.class
 	 * @param stack            Stack of <T> to be converted to T[]
 	 *

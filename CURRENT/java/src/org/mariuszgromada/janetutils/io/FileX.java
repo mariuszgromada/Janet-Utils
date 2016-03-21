@@ -57,6 +57,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.mariuszgromada.janetutils.ArrayX;
+import org.mariuszgromada.janetutils.RandomX;
 
 /**
  * Class implements general purpose methods
@@ -453,5 +454,52 @@ public final class FileX {
 	 */
 	public static boolean writeFileLines(String filePath, Collection<String> content) {
 		return writeFileLines( new File(filePath), content);
+	}
+	/**
+	 * Creates directory given by the specified path
+	 * 
+	 * @param dirPath         Directory name.
+	 * @return                True if directory was created, false otherwise.
+	 */
+	public static final boolean makeDir(String dirPath) {
+		if (dirPath == null) return false;
+		if (dirPath.length() == 0) return false;
+		File dir = new File(dirPath);
+		return dir.mkdir();
+	}
+	/**
+	 * Removes empty directory denoted as directory path.
+	 * 
+	 * @param dirPath         Directory name.
+	 * @return                True if directory was removed, false otherwise.
+	 */
+	public static final boolean removeDir(String dirPath) {
+		if (dirPath == null) return false;
+		if (dirPath.length() == 0) return false;
+		File dir = new File(dirPath);
+		if ( dir.isDirectory() == false) return false;
+		return dir.delete();
+	}
+	/**
+	 * Removes file denoted as file path.
+	 * 
+	 * @param filePath         Directory name.
+	 * @return                 True if file was removed, false otherwise.
+	 */
+	public static final boolean removeFile(String filePath) {
+		if (filePath == null) return false;
+		if (filePath.length() == 0) return false;
+		File file = new File(filePath);
+		if ( file.isFile() == false) return false;
+		return file.delete();
+	}
+	/**
+	 * Generates random file name.
+	 * @param length    File name length (without extension).
+	 * @param fileExt   File extension.
+	 * @return          Random file name containing a-zA-Z0-9.
+	 */
+	public static final String genRndFileName(int length, String fileExt) {
+		return RandomX.randomString(length) + "." + fileExt;
 	}
 }

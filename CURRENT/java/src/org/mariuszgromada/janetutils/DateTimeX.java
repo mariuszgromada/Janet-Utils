@@ -102,6 +102,13 @@ public final class DateTimeX {
 	public static final String getCurrDateTimeStr() {
 		return getCurrDateTimeStr(DEFAULT_DATE_TIME_FORMAT);
 	}
+	public static final String geDateTimeStr(Date date, String dateFormat) {
+		DateFormat df = new SimpleDateFormat(dateFormat);
+		return df.format(date);
+	}
+	public static final String geDateTimeStr(Date date) {
+		return geDateTimeStr(date, DEFAULT_DATE_TIME_FORMAT);
+	}
 	/**
 	 * Current date/time in milliseconds
 	 * @return Number of milliseconds

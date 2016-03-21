@@ -1,5 +1,5 @@
 /*
- * @(#)FilesListRecursive.java        1.0.0    2016-01-18
+ * @(#)FilesListX.java        1.0.0    2016-01-18
  *
  * You may use this software under the condition of "Simplified BSD License"
  *
@@ -69,7 +69,7 @@ import org.mariuszgromada.janetutils.ArrayX;
  *
  * @version        1.0.0
  */
-public class FilesListRecursive {
+public class FilesListX {
 	/**
 	 * All elements found recursively starting from a given root folder
 	 */
@@ -106,7 +106,7 @@ public class FilesListRecursive {
 	 * Constructor based on string folder path
 	 * @param rootFolderPath
 	 */
-	public FilesListRecursive(String rootFolderPath) {
+	public FilesListX(String rootFolderPath) {
 		elementsCollection = new ArrayList<File>();
 		filesCollection = new ArrayList<File>();
 		foldersCollection = new ArrayList<File>();
@@ -117,7 +117,7 @@ public class FilesListRecursive {
 	 * Constructor based on File object representing folder
 	 * @param rootFolderPath
 	 */
-	public FilesListRecursive(File rootFileFolder) {
+	public FilesListX(File rootFileFolder) {
 		elementsCollection = new ArrayList<File>();
 		filesCollection = new ArrayList<File>();
 		foldersCollection = new ArrayList<File>();
@@ -128,7 +128,7 @@ public class FilesListRecursive {
 	 * Constructor based on Folder object representing folder
 	 * @param rootFolderPath
 	 */
-	public FilesListRecursive(Folder rootFolder) {
+	public FilesListX(Folder rootFolder) {
 		elementsCollection = new ArrayList<File>();
 		filesCollection = new ArrayList<File>();
 		foldersCollection = new ArrayList<File>();
