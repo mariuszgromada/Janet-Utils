@@ -55,6 +55,7 @@ import org.mariuszgromada.janetutils.ArrayX;
 import org.mariuszgromada.janetutils.ComputingTime;
 import org.mariuszgromada.janetutils.ConsoleX;
 import org.mariuszgromada.janetutils.DateTimeX;
+import org.mariuszgromada.janetutils.StringX;
 
 /**
  * Regression tests for public API provided by Janet-Sudoku.
@@ -197,7 +198,40 @@ final class UtilsTests {
 				resultDesc = "Expecting equal - is not equal.";
 			}
 			break;
-		}
+		case 3:
+			testDesc = "DateTimeX.getCurrDateTimeStr()";
+			{
+				String dt = DateTimeX.getCurrDateTimeStr();
+				if (dt == null) testResult = false;
+				if (dt.length() != 19) testResult = false;
+				if (StringX.regexMatch(dt, StringX.PATTERN_DATE_TIME_YYYYMMDDHHMMSS) == false) testResult = false;					
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - is equal.";
+			} else {
+				resultDesc = "Expecting equal - is not equal.";
+			}
+			break;
+		case 4:
+			testDesc = "DateTimeX.currentTimeMillis()";
+			{
+				long startTime = DateTimeX.currentTimeMillis();
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				long endTime = DateTimeX.currentTimeMillis();
+				long delta = endTime - startTime;
+				if ( Math.abs(delta - 1000) > 1 )
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - is equal.";
+			} else {
+				resultDesc = "Expecting equal - is not equal.";
+			}
+			break;		}
 		if (testResult == true)
 			ConsoleX.println("(JanetUtilsTests) [Test: " + testId + "] " + testDesc + " " + resultDesc + " >>> result: OK");
 		else
@@ -207,5 +241,5 @@ final class UtilsTests {
 	/**
 	 * Number of regression tests;
 	 */
-	static final int NUMBER_OF_TESTS = 3;
+	static final int NUMBER_OF_TESTS = 5;
 }

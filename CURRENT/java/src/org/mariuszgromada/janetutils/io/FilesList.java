@@ -69,7 +69,7 @@ import org.mariuszgromada.janetutils.ArrayX;
  *
  * @version        1.0.0
  */
-public class FilesListX {
+public class FilesList {
 	/**
 	 * All elements found recursively starting from a given root folder
 	 */
@@ -106,7 +106,7 @@ public class FilesListX {
 	 * Constructor based on string folder path
 	 * @param rootFolderPath
 	 */
-	public FilesListX(String rootFolderPath) {
+	public FilesList(String rootFolderPath) {
 		elementsCollection = new ArrayList<File>();
 		filesCollection = new ArrayList<File>();
 		foldersCollection = new ArrayList<File>();
@@ -117,7 +117,7 @@ public class FilesListX {
 	 * Constructor based on File object representing folder
 	 * @param rootFolderPath
 	 */
-	public FilesListX(File rootFileFolder) {
+	public FilesList(File rootFileFolder) {
 		elementsCollection = new ArrayList<File>();
 		filesCollection = new ArrayList<File>();
 		foldersCollection = new ArrayList<File>();
@@ -128,7 +128,7 @@ public class FilesListX {
 	 * Constructor based on Folder object representing folder
 	 * @param rootFolderPath
 	 */
-	public FilesListX(Folder rootFolder) {
+	public FilesList(Folder rootFolder) {
 		elementsCollection = new ArrayList<File>();
 		filesCollection = new ArrayList<File>();
 		foldersCollection = new ArrayList<File>();

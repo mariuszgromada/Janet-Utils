@@ -103,4 +103,293 @@ public final class ArrayX {
 			array[i] = stack.get(i);
 		return array;
 	}
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public void quickSort(byte[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		byte x;
+		byte w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( array[i] < x )
+				i++;
+			while ( array[j] > x )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public void quickSort(byte[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public void quickSort(short[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		short x;
+		short w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( array[i] < x )
+				i++;
+			while ( array[j] > x )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public void quickSort(short[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public void quickSort(int[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		int x;
+		int w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( array[i] < x )
+				i++;
+			while ( array[j] > x )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public void quickSort(int[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public void quickSort(long[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		long x;
+		long w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( array[i] < x )
+				i++;
+			while ( array[j] > x )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public void quickSort(long[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public void quickSort(double[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		double x;
+		double w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( array[i] < x )
+				i++;
+			while ( array[j] > x )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public void quickSort(double[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public void quickSort(float[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		float x;
+		float w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( array[i] < x )
+				i++;
+			while ( array[j] > x )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public void quickSort(float[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public void quickSort(boolean[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		boolean x;
+		boolean w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( (array[i] == false) && (x == true) )
+				i++;
+			while ( (array[j] == true) && (x == false) )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public void quickSort(boolean[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public void quickSort(char[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		char x;
+		char w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( array[i] < x )
+				i++;
+			while ( array[j] > x )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public void quickSort(char[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+
 }

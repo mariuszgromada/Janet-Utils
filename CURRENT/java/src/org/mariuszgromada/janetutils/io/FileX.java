@@ -58,6 +58,7 @@ import java.util.Collection;
 
 import org.mariuszgromada.janetutils.ArrayX;
 import org.mariuszgromada.janetutils.RandomX;
+import org.mariuszgromada.janetutils.StringX;
 
 /**
  * Class implements general purpose methods
@@ -500,6 +501,6 @@ public final class FileX {
 	 * @return          Random file name containing a-zA-Z0-9.
 	 */
 	public static final String genRndFileName(int length, String fileExt) {
-		return RandomX.randomString(length) + "." + fileExt;
+		return StringX.randomString(length) + "." + fileExt;
 	}
 }
