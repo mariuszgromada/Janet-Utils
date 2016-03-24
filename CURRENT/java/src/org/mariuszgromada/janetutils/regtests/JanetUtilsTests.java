@@ -285,6 +285,141 @@ final class UtilsTests {
 				resultDesc = "Expecting length 20 - is not 20.";
 			}
 			break;
+		case 8:
+			testDesc = "ArrayX.quickSort(boolean)";
+			{
+				boolean[] a = {true, false, false, true, true, false, true};
+				boolean[] b = {false, false, false, true, true, true, true};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 9:
+			testDesc = "ArrayX.quickSort(char)";
+			{
+				char[] a = {'b', 'a', 'd', 'c', 'f', 'g', 'e'};
+				char[] b = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 10:
+			testDesc = "ArrayX.quickSort(String)";
+			{
+				String[] a = {"Ola", "Zosia", "Ala", "Ela", "Gosia", "Basia", "Halina"};
+				String[] b = {"Ala", "Basia", "Ela", "Gosia",  "Halina", "Ola", "Zosia"};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 11:
+			testDesc = "ArrayX.quickSort(byte)";
+			{
+				byte[] a = {6, 2, 4, 3, 0, 1, 5};
+				byte[] b = {0, 1, 2, 3, 4, 5, 6};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 12:
+			testDesc = "ArrayX.quickSort(short)";
+			{
+				short[] a = {6, 2, 4, 3, 0, 1, 5};
+				short[] b = {0, 1, 2, 3, 4, 5, 6};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 13:
+			testDesc = "ArrayX.quickSort(int)";
+			{
+				int[] a = {6, 2, 4, 3, 0, 1, 5};
+				int[] b = {0, 1, 2, 3, 4, 5, 6};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 14:
+			testDesc = "ArrayX.quickSort(long)";
+			{
+				long[] a = {6, 2, 4, 3, 0, 1, 5};
+				long[] b = {0, 1, 2, 3, 4, 5, 6};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 15:
+			testDesc = "ArrayX.quickSort(float)";
+			{
+				float[] a = {6, 2, 4, 3, 0, 1, 5};
+				float[] b = {0, 1, 2, 3, 4, 5, 6};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 16:
+			testDesc = "ArrayX.quickSort(double)";
+			{
+				double[] a = {6, 2, 4, 3, 0, 1, 5};
+				double[] b = {0, 1, 2, 3, 4, 5, 6};
+				ArrayX.quickSort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
 		}
 		if (testResult == true)
 			ConsoleX.println("(JanetUtilsTests) [Test: " + testId + "] " + testDesc + " " + resultDesc + " >>> result: OK");
@@ -295,5 +430,5 @@ final class UtilsTests {
 	/**
 	 * Number of regression tests;
 	 */
-	static final int NUMBER_OF_TESTS = 8;
+	static final int NUMBER_OF_TESTS = 17;
 }

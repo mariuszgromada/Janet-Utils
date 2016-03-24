@@ -108,7 +108,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public void quickSort(byte[] array, int fromIndex, int toIndex) {
+	public static final void quickSort(byte[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		byte x;
@@ -136,7 +136,7 @@ public final class ArrayX {
 	/**
 	 * Quick sort of the array.
 	 */
-	public void quickSort(byte[] array) {
+	public static final void quickSort(byte[] array) {
 		quickSort(array, 0, array.length - 1);
 	}
 	/**
@@ -144,7 +144,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public void quickSort(short[] array, int fromIndex, int toIndex) {
+	public static final void quickSort(short[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		short x;
@@ -172,7 +172,7 @@ public final class ArrayX {
 	/**
 	 * Quick sort of the array.
 	 */
-	public void quickSort(short[] array) {
+	public static final void quickSort(short[] array) {
 		quickSort(array, 0, array.length - 1);
 	}
 	/**
@@ -180,7 +180,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public void quickSort(int[] array, int fromIndex, int toIndex) {
+	public static final void quickSort(int[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		int x;
@@ -208,7 +208,7 @@ public final class ArrayX {
 	/**
 	 * Quick sort of the array.
 	 */
-	public void quickSort(int[] array) {
+	public static final void quickSort(int[] array) {
 		quickSort(array, 0, array.length - 1);
 	}
 	/**
@@ -216,7 +216,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public void quickSort(long[] array, int fromIndex, int toIndex) {
+	public static final void quickSort(long[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		long x;
@@ -244,7 +244,7 @@ public final class ArrayX {
 	/**
 	 * Quick sort of the array.
 	 */
-	public void quickSort(long[] array) {
+	public static final void quickSort(long[] array) {
 		quickSort(array, 0, array.length - 1);
 	}
 	/**
@@ -252,7 +252,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public void quickSort(double[] array, int fromIndex, int toIndex) {
+	public static final void quickSort(double[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		double x;
@@ -280,7 +280,7 @@ public final class ArrayX {
 	/**
 	 * Quick sort of the array.
 	 */
-	public void quickSort(double[] array) {
+	public static final void quickSort(double[] array) {
 		quickSort(array, 0, array.length - 1);
 	}
 	/**
@@ -288,7 +288,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public void quickSort(float[] array, int fromIndex, int toIndex) {
+	public static final void quickSort(float[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		float x;
@@ -316,7 +316,7 @@ public final class ArrayX {
 	/**
 	 * Quick sort of the array.
 	 */
-	public void quickSort(float[] array) {
+	public static final void quickSort(float[] array) {
 		quickSort(array, 0, array.length - 1);
 	}
 	/**
@@ -324,7 +324,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public void quickSort(boolean[] array, int fromIndex, int toIndex) {
+	public static final void quickSort(boolean[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		boolean x;
@@ -352,7 +352,7 @@ public final class ArrayX {
 	/**
 	 * Quick sort of the array.
 	 */
-	public void quickSort(boolean[] array) {
+	public static final void quickSort(boolean[] array) {
 		quickSort(array, 0, array.length - 1);
 	}
 	/**
@@ -360,7 +360,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public void quickSort(char[] array, int fromIndex, int toIndex) {
+	public static final void quickSort(char[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		char x;
@@ -388,8 +388,473 @@ public final class ArrayX {
 	/**
 	 * Quick sort of the array.
 	 */
-	public void quickSort(char[] array) {
+	public static final void quickSort(char[] array) {
 		quickSort(array, 0, array.length - 1);
 	}
-
+	/**
+	 * Quick sort of the array.
+	 * @param fromIndex    Starting left index.
+	 * @param toIndex    Starting right index.
+	 */
+	public static final void quickSort(String[] array, int fromIndex, int toIndex) {
+		int i = fromIndex;
+		int j = toIndex;
+		String x;
+		String w;
+		x = array[(fromIndex+toIndex)/2];
+		do {
+			while ( array[i].compareTo(x) < 0 )
+				i++;
+			while ( array[j].compareTo(x) > 0 )
+				j--;
+			if (i<=j)
+			{
+				w = array[i];
+				array[i] = array[j];
+				array[j] = w;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		if (fromIndex < j)
+			quickSort(array, fromIndex,j);
+		if (i < toIndex)
+			quickSort(array, i,toIndex);
+	}
+	/**
+	 * Quick sort of the array.
+	 */
+	public static final void quickSort(String[] array) {
+		quickSort(array, 0, array.length - 1);
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final boolean[] copy(boolean[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		boolean[] arrayCopy = new boolean[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = array[i];
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final byte[] copy(byte[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		byte[] arrayCopy = new byte[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = array[i];
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final short[] copy(short[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		short[] arrayCopy = new short[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = array[i];
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final int[] copy(int[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		int[] arrayCopy = new int[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = array[i];
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final long[] copy(long[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		long[] arrayCopy = new long[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = array[i];
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final float[] copy(float[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		float[] arrayCopy = new float[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = array[i];
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final double[] copy(double[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		double[] arrayCopy = new double[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = array[i];
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final char[] copy(char[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		char[] arrayCopy = new char[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = array[i];
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Given array copy.
+	 * @param array   The array to be copied.
+	 * @return        Given array copy;
+	 */
+	public static final String[] copy(String[] array) {
+		if (array == null) return null;
+		int n = array.length;
+		String[] arrayCopy = new String[n];
+		for (int i = 0; i < n; i++) {
+			arrayCopy[i] = new String(array[i]);
+		}
+		return arrayCopy;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(boolean[] array1, boolean[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) return false;
+		}
+		return true;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(byte[] array1, byte[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) return false;
+		}
+		return true;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(short[] array1, short[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) return false;
+		}
+		return true;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(int[] array1, int[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) return false;
+		}
+		return true;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(long[] array1, long[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) return false;
+		}
+		return true;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(float[] array1, float[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) return false;
+		}
+		return true;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(double[] array1, double[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) return false;
+		}
+		return true;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(char[] array1, char[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) return false;
+		}
+		return true;
+	}
+	/**
+	 * Check whether array content is equal.
+	 * @param array1   First array.
+	 * @param array2   Second array.
+	 * @return         True if array content is equal, otherwise false.
+	 */
+	public static final boolean equals(String[] array1, String[] array2) {
+		if (array1 == null) return false;
+		if (array2 == null) return false;
+		if (array1.length != array2.length) return false;
+		int n = array1.length;
+		for (int i = 0; i < n; i++) {
+			if (array1[i].equals(array2[i]) == false) return false;
+		}
+		return true;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(boolean[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		boolean w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(byte[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		byte w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(short[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		short w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(int[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		int w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(long[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		long w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(float[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		float w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(double[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		double w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(Object[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		Object w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
 }
