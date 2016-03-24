@@ -55,6 +55,7 @@ import org.mariuszgromada.janetutils.ArrayX;
 import org.mariuszgromada.janetutils.ComputingTime;
 import org.mariuszgromada.janetutils.ConsoleX;
 import org.mariuszgromada.janetutils.DateTimeX;
+import org.mariuszgromada.janetutils.RandomX;
 import org.mariuszgromada.janetutils.StringX;
 
 /**
@@ -231,7 +232,60 @@ final class UtilsTests {
 			} else {
 				resultDesc = "Expecting equal - is not equal.";
 			}
-			break;		}
+			break;
+		case 5:
+			testDesc = "RandomX.randomIndex()";
+			{
+				for (int i = 0; i < 100000; i++) {
+					int r = RandomX.randomIndex(20);
+					if ( (r < 0) || (r > 19) ) {
+						testResult = false;
+						break;
+					}
+				}
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting between 0 and 19 - is between 0 and 19.";
+			} else {
+				resultDesc = "Expecting between 0 and 19 - found other value.";
+			}
+			break;
+		case 6:
+			testDesc = "RandomX.randomNumber()";
+			{
+				for (int i = 0; i < 100000; i++) {
+					int r = RandomX.randomNumber(20);
+					if ( (r < 1) || (r > 20) ) {
+						testResult = false;
+						break;
+					}
+				}
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting between 1 and 20 - is between 1 and 20.";
+			} else {
+				resultDesc = "Expecting between 1 and 20 - found other value.";
+			}
+			break;
+		case 7:
+			testDesc = "StringX.randomString()";
+			{
+				for (int i = 0; i < 10; i++) {
+					String s = StringX.randomString(20);
+					ConsoleX.println(s);
+					if (s.length() != 20) {
+						testResult = false;
+						break;
+					}
+				}
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting length 20 - is 20.";
+			} else {
+				resultDesc = "Expecting length 20 - is not 20.";
+			}
+			break;
+		}
 		if (testResult == true)
 			ConsoleX.println("(JanetUtilsTests) [Test: " + testId + "] " + testDesc + " " + resultDesc + " >>> result: OK");
 		else
@@ -241,5 +295,5 @@ final class UtilsTests {
 	/**
 	 * Number of regression tests;
 	 */
-	static final int NUMBER_OF_TESTS = 5;
+	static final int NUMBER_OF_TESTS = 8;
 }

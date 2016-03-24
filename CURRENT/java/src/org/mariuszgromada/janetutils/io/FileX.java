@@ -57,7 +57,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.mariuszgromada.janetutils.ArrayX;
-import org.mariuszgromada.janetutils.RandomX;
 import org.mariuszgromada.janetutils.StringX;
 
 /**
@@ -502,5 +501,12 @@ public final class FileX {
 	 */
 	public static final String genRndFileName(int length, String fileExt) {
 		return StringX.randomString(length) + "." + fileExt;
+	}
+	/**
+	 * Returns temporary directory location.
+	 * @return Temporary directory location.
+	 */
+	public static final String getTmpDir() {
+		return System.getProperty("java.io.tmpdir");
 	}
 }
