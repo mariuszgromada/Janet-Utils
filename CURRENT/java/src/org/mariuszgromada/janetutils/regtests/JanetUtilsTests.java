@@ -286,11 +286,11 @@ final class UtilsTests {
 			}
 			break;
 		case 8:
-			testDesc = "ArrayX.quickSort(boolean)";
+			testDesc = "ArrayX.sort(boolean[])";
 			{
 				boolean[] a = {true, false, false, true, true, false, true};
 				boolean[] b = {false, false, false, true, true, true, true};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -301,11 +301,11 @@ final class UtilsTests {
 			}
 			break;
 		case 9:
-			testDesc = "ArrayX.quickSort(char)";
+			testDesc = "ArrayX.sort(char[])";
 			{
 				char[] a = {'b', 'a', 'd', 'c', 'f', 'g', 'e'};
 				char[] b = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -316,11 +316,11 @@ final class UtilsTests {
 			}
 			break;
 		case 10:
-			testDesc = "ArrayX.quickSort(String)";
+			testDesc = "ArrayX.sort(String[])";
 			{
 				String[] a = {"Ola", "Zosia", "Ala", "Ela", "Gosia", "Basia", "Halina"};
 				String[] b = {"Ala", "Basia", "Ela", "Gosia",  "Halina", "Ola", "Zosia"};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -331,11 +331,11 @@ final class UtilsTests {
 			}
 			break;
 		case 11:
-			testDesc = "ArrayX.quickSort(byte)";
+			testDesc = "ArrayX.sort(byte[])";
 			{
 				byte[] a = {6, 2, 4, 3, 0, 1, 5};
 				byte[] b = {0, 1, 2, 3, 4, 5, 6};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -346,11 +346,11 @@ final class UtilsTests {
 			}
 			break;
 		case 12:
-			testDesc = "ArrayX.quickSort(short)";
+			testDesc = "ArrayX.sort(short[])";
 			{
 				short[] a = {6, 2, 4, 3, 0, 1, 5};
 				short[] b = {0, 1, 2, 3, 4, 5, 6};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -361,11 +361,11 @@ final class UtilsTests {
 			}
 			break;
 		case 13:
-			testDesc = "ArrayX.quickSort(int)";
+			testDesc = "ArrayX.sort(int[])";
 			{
 				int[] a = {6, 2, 4, 3, 0, 1, 5};
 				int[] b = {0, 1, 2, 3, 4, 5, 6};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -376,11 +376,11 @@ final class UtilsTests {
 			}
 			break;
 		case 14:
-			testDesc = "ArrayX.quickSort(long)";
+			testDesc = "ArrayX.sort(long[])";
 			{
 				long[] a = {6, 2, 4, 3, 0, 1, 5};
 				long[] b = {0, 1, 2, 3, 4, 5, 6};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -391,11 +391,11 @@ final class UtilsTests {
 			}
 			break;
 		case 15:
-			testDesc = "ArrayX.quickSort(float)";
+			testDesc = "ArrayX.sort(float[])";
 			{
 				float[] a = {6, 2, 4, 3, 0, 1, 5};
 				float[] b = {0, 1, 2, 3, 4, 5, 6};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -406,11 +406,281 @@ final class UtilsTests {
 			}
 			break;
 		case 16:
-			testDesc = "ArrayX.quickSort(double)";
+			testDesc = "ArrayX.sort(double[])";
 			{
 				double[] a = {6, 2, 4, 3, 0, 1, 5};
 				double[] b = {0, 1, 2, 3, 4, 5, 6};
-				ArrayX.quickSort(a);
+				ArrayX.sort(a);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 17:
+			testDesc = "ArrayX.swapElements(boolean[], int, int)";
+			{
+				boolean[] a = {true, false, false, true, true, false, true};
+				boolean[] b = {true, false, true, false, true, false, true};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 18:
+			testDesc = "ArrayX.swapElements(char[], int, int)";
+			{
+				char[] a = {'b', 'a', 'd', 'c', 'f', 'g', 'e'};
+				char[] b = {'b', 'a', 'c', 'd', 'f', 'g', 'e'};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 19:
+			testDesc = "ArrayX.swapElements(String[], int, int)";
+			{
+				String[] a = {"Ola", "Zosia", "Ala", "Ela", "Gosia", "Basia", "Halina"};
+				String[] b = {"Ola", "Zosia", "Ela", "Ala", "Gosia", "Basia", "Halina"};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 20:
+			testDesc = "ArrayX.swapElements(byte[], int, int)";
+			{
+				byte[] a = {6, 2, 4, 3, 0, 1, 5};
+				byte[] b = {6, 2, 3, 4, 0, 1, 5};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 21:
+			testDesc = "ArrayX.swapElements(short[], int, int)";
+			{
+				short[] a = {6, 2, 4, 3, 0, 1, 5};
+				short[] b = {6, 2, 3, 4, 0, 1, 5};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 22:
+			testDesc = "ArrayX.swapElements(int[], int, int)";
+			{
+				int[] a = {6, 2, 4, 3, 0, 1, 5};
+				int[] b = {6, 2, 3, 4, 0, 1, 5};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 23:
+			testDesc = "ArrayX.swapElements(long[], int, int)";
+			{
+				long[] a = {6, 2, 4, 3, 0, 1, 5};
+				long[] b = {6, 2, 3, 4, 0, 1, 5};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 24:
+			testDesc = "ArrayX.swapElements(float[], int, int)";
+			{
+				float[] a = {6, 2, 4, 3, 0, 1, 5};
+				float[] b = {6, 2, 3, 4, 0, 1, 5};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 25:
+			testDesc = "ArrayX.swapElements(double[], int, int)";
+			{
+				double[] a = {6, 2, 4, 3, 0, 1, 5};
+				double[] b = {6, 2, 3, 4, 0, 1, 5};
+				ArrayX.swapElements(a, 2, 3);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 26:
+			testDesc = "ArrayX.sort(boolean[], int, int)";
+			{
+				boolean[] a = {true, false, false, true, true, false, true};
+				boolean[] b = {true, false, false, false, true, true, true};
+				ArrayX.sort(a, 2, 5);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 27:
+			testDesc = "ArrayX.sort(char[], int, int)";
+			{
+				char[] a = {'b', 'a', 'd', 'c', 'f', 'g', 'e'};
+				char[] b = {'b', 'a', 'c', 'd', 'f', 'g', 'e'};
+				ArrayX.sort(a, 2, 5);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 28:
+			testDesc = "ArrayX.sort(String[], int, int)";
+			{
+				String[] a = {"Ola", "Zosia", "Ala", "Ela", "Gosia", "Basia", "Halina"};
+				String[] b = {"Ola", "Zosia", "Ala", "Basia", "Ela", "Gosia", "Halina"};
+				ArrayX.sort(a, 2, 5);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 29:
+			testDesc = "ArrayX.sort(byte[], int, int)";
+			{
+				byte[] a = {6, 2, 4, 3, 0, 1, 5};
+				byte[] b = {6, 2, 0, 1, 3, 4, 5};
+				ArrayX.sort(a, 2, 5);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 30:
+			testDesc = "ArrayX.sort(short[], int, int)";
+			{
+				short[] a = {6, 2, 4, 3, 0, 1, 5};
+				short[] b = {6, 2, 0, 1, 3, 4, 5};
+				ArrayX.sort(a, 2, 5);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 31:
+			testDesc = "ArrayX.sort(int[], int, int)";
+			{
+				int[] a = {6, 2, 4, 3, 0, 1, 5};
+				int[] b = {6, 2, 0, 1, 3, 4, 5};
+				ArrayX.sort(a, 2, 5);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 32:
+			testDesc = "ArrayX.sort(long[], int, int)";
+			{
+				long[] a = {6, 2, 4, 3, 0, 1, 5};
+				long[] b = {6, 2, 0, 1, 3, 4, 5};
+				ArrayX.sort(a, 2, 5);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 33:
+			testDesc = "ArrayX.sort(float[], int, int)";
+			{
+				float[] a = {6, 2, 4, 3, 0, 1, 5};
+				float[] b = {6, 2, 0, 1, 3, 4, 5};
+				ArrayX.sort(a, 2, 5);
+				if (ArrayX.equals(a, b) == false)
+					testResult = false;
+			}
+			if (testResult == true) {
+				resultDesc = "Expecting equal - are equal";
+			} else {
+				resultDesc = "Expecting equal - are not equal";
+			}
+			break;
+		case 34:
+			testDesc = "ArrayX.sort(double[], int, int)";
+			{
+				double[] a = {6, 2, 4, 3, 0, 1, 5};
+				double[] b = {6, 2, 0, 1, 3, 4, 5};
+				ArrayX.sort(a, 2, 5);
 				if (ArrayX.equals(a, b) == false)
 					testResult = false;
 			}
@@ -430,5 +700,5 @@ final class UtilsTests {
 	/**
 	 * Number of regression tests;
 	 */
-	static final int NUMBER_OF_TESTS = 17;
+	static final int NUMBER_OF_TESTS = 34;
 }

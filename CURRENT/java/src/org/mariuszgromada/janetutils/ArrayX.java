@@ -108,7 +108,7 @@ public final class ArrayX {
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(byte[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(byte[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		byte x;
@@ -133,18 +133,27 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(byte[] array) {
+	public static final int sort(byte[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(byte[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(short[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(short[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		short x;
@@ -169,18 +178,27 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(short[] array) {
+	public static final int sort(short[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(short[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(int[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(int[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		int x;
@@ -205,18 +223,27 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(int[] array) {
+	public static final int sort(int[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(int[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(long[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(long[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		long x;
@@ -241,18 +268,27 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(long[] array) {
+	public static final int sort(long[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(long[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(double[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(double[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		double x;
@@ -277,18 +313,27 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(double[] array) {
+	public static final int sort(double[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(double[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(float[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(float[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		float x;
@@ -313,18 +358,27 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(float[] array) {
+	public static final int sort(float[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(float[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(boolean[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(boolean[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		boolean x;
@@ -349,18 +403,27 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(boolean[] array) {
+	public static final int sort(boolean[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(boolean[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(char[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(char[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		char x;
@@ -385,18 +448,27 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(char[] array) {
+	public static final int sort(char[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(char[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
 	 * @param fromIndex    Starting left index.
 	 * @param toIndex    Starting right index.
 	 */
-	public static final void quickSort(String[] array, int fromIndex, int toIndex) {
+	private static final void quickSort(String[] array, int fromIndex, int toIndex) {
 		int i = fromIndex;
 		int j = toIndex;
 		String x;
@@ -421,11 +493,20 @@ public final class ArrayX {
 		if (i < toIndex)
 			quickSort(array, i,toIndex);
 	}
-	/**
-	 * Quick sort of the array.
-	 */
-	public static final void quickSort(String[] array) {
+	public static final int sort(String[] array, int fromIndex, int toIndex) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		quickSort(array, fromIndex, toIndex);
+		return ErrorCodes.NO_ERRORS;
+	}
+	public static final int sort(String[] array) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
+		return ErrorCodes.NO_ERRORS;
 	}
 	/**
 	 * Given array copy.
@@ -793,6 +874,26 @@ public final class ArrayX {
 		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
 		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
 		long w = array[index1];
+		array[index1] = array[index2];
+		array[index2] = w;
+		return ErrorCodes.NO_ERRORS;
+	}
+	/**
+	 * Swaps elements of the given array.
+	 * 
+	 * @param array    Array with elements to be swapped.
+	 * @param index1   First element index.
+	 * @param index2   Second element index.
+	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 */
+	public static final int swapElements(char[] array, int index1, int index2) {
+		if (array == null) return ErrorCodes.NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		char w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
 		return ErrorCodes.NO_ERRORS;
