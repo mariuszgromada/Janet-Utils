@@ -134,19 +134,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(byte[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(byte[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
@@ -179,19 +179,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(short[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(short[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
@@ -224,19 +224,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(int[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(int[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
@@ -269,19 +269,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(long[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(long[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
@@ -314,19 +314,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(double[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(double[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
@@ -359,19 +359,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(float[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(float[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
@@ -404,19 +404,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(boolean[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(boolean[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
@@ -449,19 +449,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(char[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(char[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Quick sort of the array.
@@ -494,19 +494,19 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(String[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, fromIndex, toIndex);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(String[] array) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.NOTHING_TO_PROCESS;
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
 		quickSort(array, 0, array.length - 1);
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Given array copy.
@@ -784,19 +784,19 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(boolean[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		boolean w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -804,19 +804,19 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(byte[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		byte w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -824,19 +824,19 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(short[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		short w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -844,19 +844,19 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(int[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		int w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -864,19 +864,19 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(long[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		long w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -884,19 +884,19 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(char[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		char w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -904,19 +904,19 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(float[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		float w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -924,19 +924,19 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(double[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		double w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -944,18 +944,18 @@ public final class ArrayX {
 	 * @param array    Array with elements to be swapped.
 	 * @param index1   First element index.
 	 * @param index2   Second element index.
-	 * @return         {@link ErrorCodes#NO_ERRORS} if successful.
-	 *                 {@link ErrorCodes#NULL_PARAMETER} if null array.
-	 *                 {@link ErrorCodes#INCORRECT_PARAMETER} if index parameters are incorrect.
+	 * @return         {@link ErrorCodes#CODE_NO_ERRORS} if successful.
+	 *                 {@link ErrorCodes#CODE_NULL_PARAMETER} if null array.
+	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(Object[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.NO_ERRORS; 
+		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
+		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
 		Object w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
-		return ErrorCodes.NO_ERRORS;
+		return ErrorCodes.CODE_NO_ERRORS;
 	}
 }

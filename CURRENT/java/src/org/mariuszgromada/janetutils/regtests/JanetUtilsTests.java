@@ -48,6 +48,7 @@
 
 package org.mariuszgromada.janetutils.regtests;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -57,6 +58,7 @@ import org.mariuszgromada.janetutils.ConsoleX;
 import org.mariuszgromada.janetutils.DateTimeX;
 import org.mariuszgromada.janetutils.RandomX;
 import org.mariuszgromada.janetutils.StringX;
+import org.mariuszgromada.janetutils.io.FileX;
 
 /**
  * Regression tests for public API provided by Janet-Sudoku.
@@ -120,6 +122,7 @@ final class UtilsTests {
 	static boolean runTest(int testId) {
 		boolean testResult = true;
 		String testDesc = "", resultDesc = "";
+		String tmpDir = FileX.getTmpDir();
 		switch(testId) {
 		case 0:
 			testDesc = "ArrayX.toArray(List)";
@@ -690,6 +693,100 @@ final class UtilsTests {
 				resultDesc = "Expecting equal - are not equal";
 			}
 			break;
+		case 35:
+			testDesc = "FileX.getExtName(String)";
+			resultDesc = "Expecting equal - is equal";
+			{
+				String filePath = tmpDir + "test.txt";
+				boolean write = FileX.writeFile(filePath, "test");
+				String ext = FileX.getExtName(filePath);
+				boolean remove = FileX.removeFile(filePath);
+				if (ext.equals("txt") == false) {
+					testResult = false;
+					resultDesc = "Expecting equal - is not equal";
+					ConsoleX.println("Expecting 'txt', is '" + ext + "'");
+				}
+				if (write == false) {
+					testResult = false;
+					resultDesc = "Writting unsuccessful.";
+				}
+				if (remove == false) {
+					testResult = false;
+					resultDesc = "Removing unsuccessful.";
+				}
+			}
+			break;
+		case 36:
+			testDesc = "FileX.getExtName(File)";
+			resultDesc = "Expecting equal - is equal";
+			{
+				File file = new File(tmpDir + "test.txt");
+				boolean write = FileX.writeFile(file, "test");
+				String ext = FileX.getExtName(file);
+				boolean remove = FileX.removeFile(file);
+				if (ext.equals("txt") == false) {
+					testResult = false;
+					resultDesc = "Expecting equal - is not equal";
+					ConsoleX.println("Expecting 'txt', is '" + ext + "'");
+				}
+				if (write == false) {
+					testResult = false;
+					resultDesc = "Writting unsuccessful.";
+				}
+				if (remove == false) {
+					testResult = false;
+					resultDesc = "Removing unsuccessful.";
+				}
+			}
+			break;
+		case 37:
+			testDesc = "FileX.getExtName(String)";
+			resultDesc = "Expecting equal - is equal";
+			{
+				String filePath = tmpDir + "test.txt";
+				boolean write = FileX.writeFile(filePath, "test");
+				String fileName = FileX.getNameWithouExt(filePath);
+				boolean remove = FileX.removeFile(filePath);
+				ConsoleX.println("Expecting 'test', is '" + fileName + "'");
+				if (fileName.equals("test") == false) {
+					testResult = false;
+					resultDesc = "Expecting equal - is not equal";
+					ConsoleX.println("Expecting 'test', is '" + fileName + "'");
+				}
+				if (write == false) {
+					testResult = false;
+					resultDesc = "Writting unsuccessful.";
+				}
+				if (remove == false) {
+					testResult = false;
+					resultDesc = "Removing unsuccessful.";
+				}
+			}
+			break;
+		case 38:
+			testDesc = "FileX.getExtName(File)";
+			resultDesc = "Expecting equal - is equal";
+			{
+				File file = new File(tmpDir + "test.txt");
+				boolean write = FileX.writeFile(file, "test");
+				String fileName = FileX.getNameWithouExt(file);
+				boolean remove = FileX.removeFile(file);
+				ConsoleX.println("Expecting 'test', is '" + fileName + "'");
+				if (fileName.equals("test") == false) {
+					testResult = false;
+					resultDesc = "Expecting equal - is not equal";
+					ConsoleX.println("Expecting 'test', is '" + fileName + "'");
+				}
+				if (write == false) {
+					testResult = false;
+					resultDesc = "Writting unsuccessful.";
+				}
+				if (remove == false) {
+					testResult = false;
+					resultDesc = "Removing unsuccessful.";
+				}
+			}
+			break;
 		}
 		if (testResult == true)
 			ConsoleX.println("(JanetUtilsTests) [Test: " + testId + "] " + testDesc + " " + resultDesc + " >>> result: OK");
@@ -700,5 +797,5 @@ final class UtilsTests {
 	/**
 	 * Number of regression tests;
 	 */
-	static final int NUMBER_OF_TESTS = 34;
+	static final int NUMBER_OF_TESTS = 39;
 }

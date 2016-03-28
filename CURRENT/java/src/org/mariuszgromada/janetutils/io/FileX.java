@@ -57,6 +57,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.mariuszgromada.janetutils.ArrayX;
+import org.mariuszgromada.janetutils.ErrorCodes;
 import org.mariuszgromada.janetutils.StringX;
 
 /**
@@ -119,6 +120,8 @@ public final class FileX {
 	 * @return                The file extension name (i.e.: jpg, html)
 	 */
 	public static final String getExtName(String fullFilePath) {
+		if (fullFilePath == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
+		if (fullFilePath.length() == 0) return ErrorCodes.CODE_STR_NOTHING_TO_PROCESS;
 		String fileExt = "";
 		if (fullFilePath != null) {
 			int dotLastIndex = fullFilePath.lastIndexOf('.');
@@ -136,6 +139,8 @@ public final class FileX {
 	 * @return                The file extension name (i.e.: jpg, html)
 	 */
 	public static final String getExtName(File file) {
+		if (file == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
+		if (file.getName().length() == 0) return ErrorCodes.CODE_STR_NOTHING_TO_PROCESS;
 		return getExtName(file.getName());
 	}
 	/**
@@ -187,15 +192,10 @@ public final class FileX {
 	 * @return                File name without extension.
 	 */
 	public static final String getNameWithouExt(String fileName) {
-		String fileNameWithoutExt = fileName;
-		if (fileName != null) {
-			int dotLastIndex = fileName.lastIndexOf('.');
-			if (dotLastIndex > 0)
-				fileNameWithoutExt = fileName.substring(0, dotLastIndex - 1);
-			else if (dotLastIndex == 0)
-				fileNameWithoutExt = "";
-		}
-		return fileNameWithoutExt;
+		if (fileName == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
+		if (fileName.length() == 0) return ErrorCodes.CODE_STR_NOTHING_TO_PROCESS;
+		File file = new File(fileName);
+		return getNameWithouExt(file);
 	}
 	/**
 	 * Returns file name without last '.' and without extension string
@@ -204,7 +204,18 @@ public final class FileX {
 	 * @return                File name without extension.
 	 */
 	public static final String getNameWithouExt(File file) {
-		return getNameWithouExt(file.getName());
+		if (file == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
+		String fileName = file.getName();
+		if (fileName.length() == 0) return ErrorCodes.CODE_STR_NOTHING_TO_PROCESS;
+		String fileNameWithoutExt = fileName;
+		if (fileName != null) {
+			int dotLastIndex = fileName.lastIndexOf('.');
+			if (dotLastIndex > 0)
+				fileNameWithoutExt = fileName.substring(0, dotLastIndex);
+			else if (dotLastIndex == 0)
+				fileNameWithoutExt = "";
+		}
+		return fileNameWithoutExt;
 	}
 	/**
 	 * Prints file list to the console
@@ -244,6 +255,7 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static final String readFile(File file)  {
+		if (file == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
 		String fileContent = null;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
@@ -256,9 +268,11 @@ public final class FileX {
 				br.close();
 			} catch (IOException e) {
 				e.printStackTrace();
+				return ErrorCodes.CODE_STR_UNKNOWN_ERROR;
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			return ErrorCodes.CODE_STR_INCORRECT_PARAMETER;
 		}
 		return fileContent;
 	}
@@ -272,6 +286,8 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static final String readFile(String filePath)  {
+		if (filePath == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
+		if (filePath.length() == 0) return ErrorCodes.CODE_STR_NOTHING_TO_PROCESS;
 		return readFile(new File(filePath));
 	}
 	/**
@@ -483,7 +499,7 @@ public final class FileX {
 	/**
 	 * Removes file denoted as file path.
 	 * 
-	 * @param filePath         Directory name.
+	 * @param filePath         File pathname.
 	 * @return                 True if file was removed, false otherwise.
 	 */
 	public static final boolean removeFile(String filePath) {
@@ -494,12 +510,25 @@ public final class FileX {
 		return file.delete();
 	}
 	/**
+	 * Removes file denoted as file path.
+	 * 
+	 * @param file             File object.
+	 * @return                 True if file was removed, false otherwise.
+	 */
+	public static final boolean removeFile(File file) {
+		if (file == null) return false;
+		if ( file.isFile() == false) return false;
+		return file.delete();
+	}
+	/**
 	 * Generates random file name.
 	 * @param length    File name length (without extension).
 	 * @param fileExt   File extension.
 	 * @return          Random file name containing a-zA-Z0-9.
 	 */
 	public static final String genRndFileName(int length, String fileExt) {
+		if (length <= 0) return ErrorCodes.CODE_STR_INCORRECT_PARAMETER;
+		if (fileExt == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
 		return StringX.randomString(length) + "." + fileExt;
 	}
 	/**
