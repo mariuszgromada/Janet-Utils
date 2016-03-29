@@ -79,6 +79,7 @@ import org.mariuszgromada.janetutils.StringX;
  * @version        1.0.0
  */
 public final class FileX {
+	public static final String SEPARATOR = File.separator;
 	/**
 	 * If case sensitive indicator
 	 * for whole org.mariuszgromada.utils.io.* package.
@@ -112,21 +113,48 @@ public final class FileX {
 	public static final boolean isCaseInsensitive() {
 		return !CASE_SENSITIVE;
 	}
+	public static final String[] getFileSytemRoots() {
+		File[] fsRoots = File.listRoots();
+		String[] roots = new String[fsRoots.length];
+		for (int i = 0; i < fsRoots.length; i++) {
+			roots[i] = fsRoots[i].getPath();
+		}
+		return roots;
+	}
+	public static final boolean exists(String path) {
+		if (path == null) return false;
+		if (path.length() == 0) return false;
+		File f = new File(path);
+		return f.exists();
+	}
+	public static final boolean isFile(String path) {
+		if (path == null) return false;
+		if (path.length() == 0) return false;
+		File f = new File(path);
+		return f.isFile();
+	}
+	public static final boolean isDirectory(String path) {
+		if (path == null) return false;
+		if (path.length() == 0) return false;
+		File f = new File(path);
+		return f.isDirectory();
+	}
+	
 	/**
 	 *
 	 * Gets file extension.
 	 *
-	 * @param fullFilePath    Full file path
+	 * @param filePath    Full file path
 	 * @return                The file extension name (i.e.: jpg, html)
 	 */
-	public static final String getExtName(String fullFilePath) {
-		if (fullFilePath == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
-		if (fullFilePath.length() == 0) return ErrorCodes.CODE_STR_NOTHING_TO_PROCESS;
+	public static final String getExtName(String filePath) {
+		if (filePath == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
+		if (filePath.length() == 0) return ErrorCodes.CODE_STR_NOTHING_TO_PROCESS;
 		String fileExt = "";
-		if (fullFilePath != null) {
-			int dotLastIndex = fullFilePath.lastIndexOf('.');
-			if ( (dotLastIndex >= 0) && (dotLastIndex < fullFilePath.length()-1) )
-				fileExt = fullFilePath.substring(dotLastIndex + 1);
+		if (filePath != null) {
+			int dotLastIndex = filePath.lastIndexOf('.');
+			if ( (dotLastIndex >= 0) && (dotLastIndex < filePath.length()-1) )
+				fileExt = filePath.substring(dotLastIndex + 1);
 		}
 		if (isCaseInsensitive())
 			fileExt = fileExt.toLowerCase();
@@ -153,6 +181,8 @@ public final class FileX {
 	 *                        false otherwise.
 	 */
 	public static final boolean fileExtIs(File file, String... extsList) {
+		if (file == null) return false;
+		if (extsList.length == 0) return false;
 		String fileExt = getExtName(file);
 		if (isCaseInsensitive()) {
 			fileExt = fileExt.toLowerCase();
@@ -173,7 +203,9 @@ public final class FileX {
 	 *
 	 * @return          True if extensions are the same, otherwise false.
 	 */
-	public static final boolean theSameFileExts(File file1, File file2) {
+	public static final boolean compareFileExts(File file1, File file2) {
+		if (file1 == null) return false;
+		if (file2 == null) return false;
 		String ext1 = getExtName(file1);
 		String ext2 = getExtName(file2);
 		if (isCaseInsensitive()) {
@@ -254,8 +286,10 @@ public final class FileX {
 	 *                        returns null. Method do not throws
 	 *                        IOException.
 	 */
-	public static final String readFile(File file)  {
+	public static final String readFile(File file) {
 		if (file == null) return ErrorCodes.CODE_STR_NULL_PARAMETER;
+		if (file.exists() == false) return ErrorCodes.CODE_STR_INCORRECT_PARAMETER;
+		if (file.isFile() == false) return ErrorCodes.CODE_STR_INCORRECT_PARAMETER;
 		String fileContent = null;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
@@ -301,6 +335,9 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static final ArrayList<String> readFileLines2ArraList(File file) {
+		if (file == null) return null;
+		if (file.exists() == false) return null;
+		if (file.isFile() == false) return null;
 		ArrayList<String> fileContent = null;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
@@ -313,9 +350,11 @@ public final class FileX {
 				br.close();
 			} catch (IOException e) {
 				e.printStackTrace();
+				return null;
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			return null;
 		}
 		return fileContent;
 	}
@@ -330,6 +369,7 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static final ArrayList<String> readFileLines2ArraList(String filePath) {
+		if (filePath == null) return null;
 		return readFileLines2ArraList(new File(filePath));
 	}
 	/**
@@ -343,6 +383,9 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static final String[] readFileLines2Array(File file)  {
+		if (file == null) return null;
+		if (file.exists() == false) return null;
+		if (file.isFile() == false) return null;
 		String[] fileLines = null;
 		ArrayList<String> fileContent = readFileLines2ArraList(file);
 		if (fileContent != null)
@@ -360,6 +403,7 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static final String[] readFileLines2Array(String filePath)  {
+		if (filePath == null) return null;
 		return readFileLines2Array(new File(filePath));
 	}
 	/**
@@ -373,6 +417,8 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static boolean writeFile(File file, String content) {
+		if (file == null) return false;
+		if (content == null) return false;
 		FileWriter fw;
 		try {
 			fw = new FileWriter(file);
@@ -395,6 +441,8 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static boolean writeFile(String filePath, String content) {
+		if (filePath == null) return false;
+		if (content == null) return false;
 		return writeFile( new File(filePath), content);
 	}
 	/**
@@ -408,6 +456,8 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static boolean writeFile(File file, Collection<String> content) {
+		if (file == null) return false;
+		if (content == null) return false;
 		FileWriter fw;
 		try {
 			fw = new FileWriter(file);
@@ -432,6 +482,8 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static boolean writeFile(String filePath, Collection<String> content) {
+		if (filePath == null) return false;
+		if (content == null) return false;
 		return writeFile( new File(filePath), content);
 	}
 	/**
@@ -445,6 +497,8 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static boolean writeFileLines(File file, Collection<String> content) {
+		if (file == null) return false;
+		if (content == null) return false;
 		FileWriter fw;
 		try {
 			fw = new FileWriter(file);
@@ -469,6 +523,8 @@ public final class FileX {
 	 *                        IOException.
 	 */
 	public static boolean writeFileLines(String filePath, Collection<String> content) {
+		if (filePath == null) return false;
+		if (content == null) return false;
 		return writeFileLines( new File(filePath), content);
 	}
 	/**

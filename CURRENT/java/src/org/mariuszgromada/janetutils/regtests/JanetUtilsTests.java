@@ -53,9 +53,11 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 import org.mariuszgromada.janetutils.ArrayX;
-import org.mariuszgromada.janetutils.ComputingTime;
+import org.mariuszgromada.janetutils.ProcessingTime;
 import org.mariuszgromada.janetutils.ConsoleX;
 import org.mariuszgromada.janetutils.DateTimeX;
+import org.mariuszgromada.janetutils.ErrorCodes;
+import org.mariuszgromada.janetutils.JanetUtils;
 import org.mariuszgromada.janetutils.RandomX;
 import org.mariuszgromada.janetutils.StringX;
 import org.mariuszgromada.janetutils.io.FileX;
@@ -82,7 +84,7 @@ public class JanetUtilsTests {
 		int numberOfTests = UtilsTests.NUMBER_OF_TESTS;
 		int resultsError = 0;
 		int resultsOk = 0;
-		ComputingTime ct = new ComputingTime();
+		ProcessingTime ct = new ProcessingTime();
 		ct.start();
 		boolean[] testResults = new boolean[UtilsTests.NUMBER_OF_TESTS];
 		for (int t = 0; t < numberOfTests; t++) {
@@ -94,11 +96,12 @@ public class JanetUtilsTests {
 		}
 		ct.end();
 		ConsoleX.println("=============================================================");
-		ConsoleX.println("Number of test: " + numberOfTests + ", OK: " + resultsOk + ", ERRORS: " + resultsError + ", computing time: " + ct.getComputingTime());
+		ConsoleX.println("Number of test: " + numberOfTests + ", OK: " + resultsOk + ", ERRORS: " + resultsError + ", computing time: " + ct.getProcessingTime());
 		for (int t = 0; t < numberOfTests; t++)
 			if (testResults[t] == false)
 				ConsoleX.println("ERROR: " + t);
 		ConsoleX.println("=============================================================");
+		JanetUtils.eventslog.consolePrint();
 		return resultsError;
 	}
 	/**
@@ -183,7 +186,7 @@ final class UtilsTests {
 		case 2:
 			testDesc = "ComputingTime";
 			{
-				ComputingTime ct = new ComputingTime();
+				ProcessingTime ct = new ProcessingTime();
 				ct.start();
 				try {
 					Thread.sleep(1000);
@@ -191,10 +194,14 @@ final class UtilsTests {
 					e.printStackTrace();
 				}
 				ct.end();
-				if ( Math.abs(ct.getComputingTimeMs()-1000) > 1 )
+				if ( Math.abs(ct.getProcessingTimeMs()-1000) > 20 ) {
 					testResult = false;
-				if ( Math.abs(ct.getComputingTime()-1.0) > 0.001 )
+					ConsoleX.println(ct.getProcessingTimeMs());
+				}
+				if ( Math.abs(ct.getProcessingTime()-1.0) > 0.02 ) {
 					testResult = false;
+					ConsoleX.println(ct.getProcessingTime());
+				}
 			}
 			if (testResult == true) {
 				resultDesc = "Expecting equal - is equal.";
@@ -227,7 +234,7 @@ final class UtilsTests {
 				}
 				long endTime = DateTimeX.currentTimeMillis();
 				long delta = endTime - startTime;
-				if ( Math.abs(delta - 1000) > 1 )
+				if ( Math.abs(delta - 1000) > 20 )
 					testResult = false;
 			}
 			if (testResult == true) {

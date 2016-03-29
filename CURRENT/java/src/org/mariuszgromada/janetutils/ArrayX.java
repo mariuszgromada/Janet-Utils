@@ -69,6 +69,7 @@ import java.util.Stack;
  * @version        1.0.0
  */
 public final class ArrayX {
+	public static final String CLASS_NAME = "ArrayX";
 	/**
 	 * Converts generic ArraList to array
 	 *
@@ -79,7 +80,20 @@ public final class ArrayX {
 	 * @return                 Array T[] including elements of ArrayList<T>
 	 */
 	public static final <T> T[] toArray(Class<T> componentType, ArrayList<T> arrayList) {
+		final String METHOD_NAME = "toArray(Class<T> componentType, ArrayList<T> arrayList)";
+		if (componentType == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "componentType = null");
+			return null;
+		}
+		if (arrayList == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "arrayList = null");
+			return null;
+		}
+		if (arrayList.size() == 0) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "arrayList.size() = 0");
+		}
 		int n = arrayList.size();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "arrayList.size() = " + n + ", componentType = " + componentType.getName());
 		@SuppressWarnings("unchecked")
 		T[] array = (T[])Array.newInstance(componentType, n);
 		for (int i = 0; i < n; i++)
@@ -96,7 +110,20 @@ public final class ArrayX {
 	 * @return                 Array T[] including elements of Stack<T>
 	 */
 	public static final <T> T[] toArray(Class<T> componentType, Stack<T> stack) {
+		final String METHOD_NAME = "toArray(Class<T> componentType, Stack<T> stack)";
+		if (componentType == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "componentType = null");
+			return null;
+		}
+		if (stack == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "stack = null");
+			return null;
+		}
+		if (stack.size() == 0) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "stack.size() = 0");
+		}
 		int n = stack.size();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "stack.size() = " + n + ", componentType = " + componentType.getName());
 		@SuppressWarnings("unchecked")
 		T[] array = (T[])Array.newInstance(componentType, n);
 		for (int i = 0; i < n; i++)
@@ -134,18 +161,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(byte[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(byte[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(byte[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(byte[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -179,18 +239,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(short[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(short[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(short[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(short[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -224,18 +317,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(int[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(int[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(int[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(int[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -269,18 +395,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(long[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(long[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(long[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(long[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -314,18 +473,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(double[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(double[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(double[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(double[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -359,18 +551,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(float[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(float[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(float[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(float[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -404,18 +629,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(boolean[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(boolean[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(boolean[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(boolean[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -449,18 +707,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(char[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(char[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(char[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(char[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -494,18 +785,51 @@ public final class ArrayX {
 			quickSort(array, i,toIndex);
 	}
 	public static final int sort(String[] array, int fromIndex, int toIndex) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
-		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (toIndex < 0) || (toIndex > array.length -1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (fromIndex == toIndex) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(String[] array, int fromIndex, int toIndex)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if ( (fromIndex < 0) || (fromIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect fromIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (toIndex < 0) || (toIndex > array.length -1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "Incorrect toIndex: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (fromIndex == toIndex) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "Equal fromIndex and toIndex: fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, fromIndex, toIndex);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length + ", fromIndex = " + fromIndex + ", toIndex = " + toIndex, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	public static final int sort(String[] array) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if (array.length < 2) return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		final String METHOD_NAME = "sort(String[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if (array.length < 2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length < 2");
+			return ErrorCodes.CODE_NOTHING_TO_PROCESS;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
 		quickSort(array, 0, array.length - 1);
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Sorting finished: array.length = " + array.length, pt.getProcessingTime());
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
