@@ -84,6 +84,7 @@ public class JanetUtilsTests {
 		int numberOfTests = UtilsTests.NUMBER_OF_TESTS;
 		int resultsError = 0;
 		int resultsOk = 0;
+		JanetUtils.logInfo = true;
 		ProcessingTime ct = new ProcessingTime();
 		ct.start();
 		boolean[] testResults = new boolean[UtilsTests.NUMBER_OF_TESTS];

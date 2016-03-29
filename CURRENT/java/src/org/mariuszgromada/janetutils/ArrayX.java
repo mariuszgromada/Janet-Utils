@@ -838,12 +838,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final boolean[] copy(boolean[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		boolean[] arrayCopy = new boolean[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(boolean[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		boolean[] arrayCopy = new boolean[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -852,12 +861,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final byte[] copy(byte[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		byte[] arrayCopy = new byte[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(byte[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		byte[] arrayCopy = new byte[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -866,12 +884,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final short[] copy(short[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		short[] arrayCopy = new short[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(short[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		short[] arrayCopy = new short[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -880,12 +907,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final int[] copy(int[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		int[] arrayCopy = new int[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(int[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int[] arrayCopy = new int[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -894,12 +930,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final long[] copy(long[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		long[] arrayCopy = new long[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(long[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		long[] arrayCopy = new long[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -908,12 +953,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final float[] copy(float[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		float[] arrayCopy = new float[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(float[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		float[] arrayCopy = new float[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -922,12 +976,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final double[] copy(double[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		double[] arrayCopy = new double[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(double[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		double[] arrayCopy = new double[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -936,12 +999,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final char[] copy(char[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		char[] arrayCopy = new char[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(char[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		char[] arrayCopy = new char[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -950,12 +1022,21 @@ public final class ArrayX {
 	 * @return        Given array copy;
 	 */
 	public static final String[] copy(String[] array) {
-		if (array == null) return null;
-		int n = array.length;
-		String[] arrayCopy = new String[n];
-		for (int i = 0; i < n; i++) {
+		final String METHOD_NAME = "copy(String[] array)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return null;
+		}
+		if (array.length == 0) if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NOTHING_TO_PROCESS, "array.length = 0");
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying started: array.length = " + array.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		String[] arrayCopy = new String[array.length];
+		for (int i = 0; i < array.length; i++) {
 			arrayCopy[i] = new String(array[i]);
 		}
+		pt.end();
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Copying finished: array.length = " + array.length, pt.getProcessingTime());
 		return arrayCopy;
 	}
 	/**
@@ -965,14 +1046,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(boolean[] array1, boolean[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i] != array2[i]) return false;
+		final String METHOD_NAME = "equals(boolean[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Check whether array content is equal.
@@ -981,14 +1087,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(byte[] array1, byte[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i] != array2[i]) return false;
+		final String METHOD_NAME = "equals(byte[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Check whether array content is equal.
@@ -997,14 +1128,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(short[] array1, short[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i] != array2[i]) return false;
+		final String METHOD_NAME = "equals(short[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Check whether array content is equal.
@@ -1013,14 +1169,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(int[] array1, int[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i] != array2[i]) return false;
+		final String METHOD_NAME = "equals(int[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Check whether array content is equal.
@@ -1029,14 +1210,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(long[] array1, long[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i] != array2[i]) return false;
+		final String METHOD_NAME = "equals(long[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Check whether array content is equal.
@@ -1045,14 +1251,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(float[] array1, float[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i] != array2[i]) return false;
+		final String METHOD_NAME = "equals(float[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Check whether array content is equal.
@@ -1061,14 +1292,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(double[] array1, double[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i] != array2[i]) return false;
+		final String METHOD_NAME = "equals(double[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Check whether array content is equal.
@@ -1077,14 +1333,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(char[] array1, char[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i] != array2[i]) return false;
+		final String METHOD_NAME = "equals(char[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i] != array2[i]) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Check whether array content is equal.
@@ -1093,14 +1374,39 @@ public final class ArrayX {
 	 * @return         True if array content is equal, otherwise false.
 	 */
 	public static final boolean equals(String[] array1, String[] array2) {
-		if (array1 == null) return false;
-		if (array2 == null) return false;
-		if (array1.length != array2.length) return false;
-		int n = array1.length;
-		for (int i = 0; i < n; i++) {
-			if (array1[i].equals(array2[i]) == false) return false;
+		final String METHOD_NAME = "equals(String[] array1, boolean[] array2)";
+		if (array1 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array1 = null");
+			return false;
 		}
-		return true;
+		if (array2 == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array2 = null");
+			return false;
+		}
+		if (array1.length != array2.length) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Difference in lengths: array1.length = " + array1.length + ", array2.length = " + array2.length);
+			return false;
+		}
+		if (JanetUtils.logInfo) JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test started: array1.length = " + array1.length + ", array2.length = " + array2.length);
+		ProcessingTime pt = new ProcessingTime();
+		pt.start();
+		int n = array1.length;
+		boolean result = true;
+		int i;
+		for (i = 0; i < n; i++) {
+			if (array1[i].equals(array2[i]) == false) {
+				result = false;
+				break;
+			}
+		}
+		pt.end();
+		if (JanetUtils.logInfo) {
+			if (result == true)
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result, pt.getProcessingTime());
+			else
+				JanetUtils.logInfo(CLASS_NAME, METHOD_NAME, "Equality test finished: array1.length = " + array1.length + ", array2.length = " + array2.length + ", result = " + result + ", array1[" + i + "] = " + array1[i] + ", array2[" + i + "] = " + array2[i], pt.getProcessingTime());
+		}
+		return result;
 	}
 	/**
 	 * Swaps elements of the given array.
@@ -1113,13 +1419,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(boolean[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(boolean[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		boolean w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -1133,13 +1454,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(byte[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(byte[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		byte w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -1153,13 +1489,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(short[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(short[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		short w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -1173,13 +1524,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(int[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(int[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		int w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -1193,13 +1559,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(long[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(long[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		long w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -1213,13 +1594,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(char[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(char[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		char w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -1233,13 +1629,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(float[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(float[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		float w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -1253,13 +1664,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(double[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(double[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		double w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 	/**
@@ -1273,13 +1699,28 @@ public final class ArrayX {
 	 *                 {@link ErrorCodes#CODE_INCORRECT_PARAMETER} if index parameters are incorrect.
 	 */
 	public static final int swapElements(Object[] array, int index1, int index2) {
-		if (array == null) return ErrorCodes.CODE_NULL_PARAMETER;
-		if ( (index1 < 0) || (index1 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if ( (index2 < 0) || (index2 > array.length - 1) ) return ErrorCodes.CODE_INCORRECT_PARAMETER;
-		if (index1 == index2) return ErrorCodes.CODE_NO_ERRORS; 
+		final String METHOD_NAME = "swapElements(Object[] array, int index1, int index2)";
+		if (array == null) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_NULL_PARAMETER, "array = null");
+			return ErrorCodes.CODE_NULL_PARAMETER;
+		}
+		if ( (index1 < 0) || (index1 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index1 out of range: index1 = " + index1 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if ( (index2 < 0) || (index2 > array.length - 1) ) {
+			if (JanetUtils.logErrors) JanetUtils.logError(CLASS_NAME, METHOD_NAME, ErrorCodes.CODE_INCORRECT_PARAMETER, "index2 out of range: index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_INCORRECT_PARAMETER;
+		}
+		if (index1 == index2) {
+			if (JanetUtils.logWarnings) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Equal indexes, nothing to swap: index1 = " + index1 + ", index2 = " + index2 + ", array.length = " + array.length);
+			return ErrorCodes.CODE_NO_ERRORS; 
+		}
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements started: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		Object w = array[index1];
 		array[index1] = array[index2];
 		array[index2] = w;
+		if (JanetUtils.logInfo) JanetUtils.logWarning(CLASS_NAME, METHOD_NAME, "Swapping elements finished: array[" + index1 + "] = " + array[index1] + ", array[" + index2 + "] = " + array[index2]);
 		return ErrorCodes.CODE_NO_ERRORS;
 	}
 }
