@@ -1,6 +1,7 @@
 package org.mariuszgromada.janetutils;
 
 public final class RandomX {
+	public static final String CLASS_NAME = RandomX.class.getName();
 	/**
 	 * Random number generator for n returning random number between 0, 1, ... n-1.
 	 *

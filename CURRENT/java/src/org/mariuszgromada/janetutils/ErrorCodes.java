@@ -1,7 +1,7 @@
 package org.mariuszgromada.janetutils;
 
 public final class ErrorCodes {
-
+	public static final String CLASS_NAME = ErrorCodes.class.getName();
 	public static final int CODE_NO_ERRORS = 0;
 	public static final int CODE_INCORRECT_PARAMETER = -100;
 	public static final int CODE_NULL_PARAMETER = -101;

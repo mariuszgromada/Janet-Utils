@@ -71,6 +71,7 @@ import java.util.Date;
  * @version        1.0.0
  */
 public final class DateTimeX {
+	public static final String CLASS_NAME = DateTimeX.class.getName();	
 	/**
 	 * Default date time format used while converting date / time
 	 * to string.

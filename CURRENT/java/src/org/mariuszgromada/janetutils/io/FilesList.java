@@ -70,6 +70,7 @@ import org.mariuszgromada.janetutils.ArrayX;
  * @version        1.0.0
  */
 public class FilesList {
+	public static final String CLASS_NAME = FilesList.class.getName();
 	/**
 	 * All elements found recursively starting from a given root folder
 	 */

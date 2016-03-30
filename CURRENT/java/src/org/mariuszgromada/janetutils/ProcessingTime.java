@@ -1,6 +1,7 @@
 package org.mariuszgromada.janetutils;
 
 public class ProcessingTime {
+	public static final String CLASS_NAME = ProcessingTime.class.getName();
 	private long startTimeMs;
 	private long endTimeMs;
 	private long processingTimeMs;

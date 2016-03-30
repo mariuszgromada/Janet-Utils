@@ -80,6 +80,7 @@ import org.mariuszgromada.janetutils.io.FileX;
  *
  */
 public class JanetUtilsTests {
+	public static final String CLASS_NAME = JanetUtilsTests.class.getName();
 	public static int start() {
 		int numberOfTests = UtilsTests.NUMBER_OF_TESTS;
 		int resultsError = 0;

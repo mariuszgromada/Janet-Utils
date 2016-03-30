@@ -3,6 +3,7 @@ package org.mariuszgromada.janetutils;
 import java.util.regex.Pattern;
 
 public final class StringX {
+	public static final String CLASS_NAME = StringX.class.getName();
 	public static final String PATTERN_DATE_TIME_YYYYMMDDHHMMSS = "[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}";
 	/**
 	 * Function used to introduce some compatibility

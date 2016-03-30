@@ -69,6 +69,7 @@ import org.mariuszgromada.janetutils.ArrayX;
  * @version        1.0.0
  */
 public class Folder {
+	public static final String CLASS_NAME = Folder.class.getName();
 	/**
 	 * Folder definition.
 	 */

@@ -79,6 +79,7 @@ import org.mariuszgromada.janetutils.StringX;
  * @version        1.0.0
  */
 public final class FileX {
+	public static final String CLASS_NAME = FileX.class.getName();
 	public static final String SEPARATOR = File.separator;
 	/**
 	 * If case sensitive indicator

@@ -69,7 +69,7 @@ import java.util.Stack;
  * @version        1.0.0
  */
 public final class ArrayX {
-	public static final String CLASS_NAME = "ArrayX";
+	public static final String CLASS_NAME = ArrayX.class.getName();
 	/**
 	 * Converts generic ArraList to array
 	 *
